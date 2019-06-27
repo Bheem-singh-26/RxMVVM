@@ -7,14 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6FA1BA0E2170B386169429FB /* Pods_RxMVVM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F07A148D46B3431B9C114F0 /* Pods_RxMVVM.framework */; };
 		9B51123E22C3B71A00747FCB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B51123D22C3B71A00747FCB /* AppDelegate.swift */; };
 		9B51124022C3B71A00747FCB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B51123F22C3B71A00747FCB /* ViewController.swift */; };
 		9B51124322C3B71A00747FCB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B51124122C3B71A00747FCB /* Main.storyboard */; };
 		9B51124522C3B71B00747FCB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B51124422C3B71B00747FCB /* Assets.xcassets */; };
 		9B51124822C3B71B00747FCB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B51124622C3B71B00747FCB /* LaunchScreen.storyboard */; };
+		9B51125422C467A500747FCB /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B51125322C467A500747FCB /* NetworkManager.swift */; };
+		9B51125922C469D400747FCB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B51125822C469D400747FCB /* Constants.swift */; };
+		9B51125C22C46C7100747FCB /* IssuesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B51125B22C46C7100747FCB /* IssuesViewModel.swift */; };
+		9B51125E22C46CF500747FCB /* Issue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B51125D22C46CF500747FCB /* Issue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7F07A148D46B3431B9C114F0 /* Pods_RxMVVM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxMVVM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		91915ED0EEF8A3BB30FC40EF /* Pods-RxMVVM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxMVVM.release.xcconfig"; path = "Target Support Files/Pods-RxMVVM/Pods-RxMVVM.release.xcconfig"; sourceTree = "<group>"; };
 		9B51123A22C3B71A00747FCB /* RxMVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxMVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B51123D22C3B71A00747FCB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B51123F22C3B71A00747FCB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +29,11 @@
 		9B51124422C3B71B00747FCB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B51124722C3B71B00747FCB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B51124922C3B71B00747FCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9B51125322C467A500747FCB /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		9B51125822C469D400747FCB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		9B51125B22C46C7100747FCB /* IssuesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssuesViewModel.swift; sourceTree = "<group>"; };
+		9B51125D22C46CF500747FCB /* Issue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Issue.swift; sourceTree = "<group>"; };
+		B8C00786096CEE128127012D /* Pods-RxMVVM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxMVVM.debug.xcconfig"; path = "Target Support Files/Pods-RxMVVM/Pods-RxMVVM.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6FA1BA0E2170B386169429FB /* Pods_RxMVVM.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +53,8 @@
 			children = (
 				9B51123C22C3B71A00747FCB /* RxMVVM */,
 				9B51123B22C3B71A00747FCB /* Products */,
+				E813A2361D4C145E708499CC /* Pods */,
+				D06441659A79D0B883F9E674 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,6 +69,11 @@
 		9B51123C22C3B71A00747FCB /* RxMVVM */ = {
 			isa = PBXGroup;
 			children = (
+				9B51125122C4675600747FCB /* Services */,
+				9B51125022C4674100747FCB /* Routers */,
+				9B51124F22C4673200747FCB /* Entities */,
+				9B51125522C4694100747FCB /* SupportFiles */,
+				9B51125222C4676800747FCB /* Views */,
 				9B51123D22C3B71A00747FCB /* AppDelegate.swift */,
 				9B51123F22C3B71A00747FCB /* ViewController.swift */,
 				9B51124122C3B71A00747FCB /* Main.storyboard */,
@@ -64,6 +84,70 @@
 			path = RxMVVM;
 			sourceTree = "<group>";
 		};
+		9B51124F22C4673200747FCB /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				9B51125D22C46CF500747FCB /* Issue.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		9B51125022C4674100747FCB /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
+		9B51125122C4675600747FCB /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				9B51125322C467A500747FCB /* NetworkManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		9B51125222C4676800747FCB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9B51125A22C46C4900747FCB /* Issues */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9B51125522C4694100747FCB /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				9B51125822C469D400747FCB /* Constants.swift */,
+			);
+			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		9B51125A22C46C4900747FCB /* Issues */ = {
+			isa = PBXGroup;
+			children = (
+				9B51125B22C46C7100747FCB /* IssuesViewModel.swift */,
+			);
+			path = Issues;
+			sourceTree = "<group>";
+		};
+		D06441659A79D0B883F9E674 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7F07A148D46B3431B9C114F0 /* Pods_RxMVVM.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E813A2361D4C145E708499CC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B8C00786096CEE128127012D /* Pods-RxMVVM.debug.xcconfig */,
+				91915ED0EEF8A3BB30FC40EF /* Pods-RxMVVM.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +155,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9B51124C22C3B71B00747FCB /* Build configuration list for PBXNativeTarget "RxMVVM" */;
 			buildPhases = (
+				EE4338D791107BF9A8A63458 /* [CP] Check Pods Manifest.lock */,
 				9B51123622C3B71A00747FCB /* Sources */,
 				9B51123722C3B71A00747FCB /* Frameworks */,
 				9B51123822C3B71A00747FCB /* Resources */,
+				8747503C16DBC59DCBF2EEE3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,13 +216,70 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8747503C16DBC59DCBF2EEE3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RxMVVM/Pods-RxMVVM-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RxMVVM/Pods-RxMVVM-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EE4338D791107BF9A8A63458 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RxMVVM-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9B51123622C3B71A00747FCB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B51125C22C46C7100747FCB /* IssuesViewModel.swift in Sources */,
+				9B51125422C467A500747FCB /* NetworkManager.swift in Sources */,
 				9B51124022C3B71A00747FCB /* ViewController.swift in Sources */,
 				9B51123E22C3B71A00747FCB /* AppDelegate.swift in Sources */,
+				9B51125922C469D400747FCB /* Constants.swift in Sources */,
+				9B51125E22C46CF500747FCB /* Issue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +423,7 @@
 		};
 		9B51124D22C3B71B00747FCB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8C00786096CEE128127012D /* Pods-RxMVVM.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -297,6 +441,7 @@
 		};
 		9B51124E22C3B71B00747FCB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 91915ED0EEF8A3BB30FC40EF /* Pods-RxMVVM.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
