@@ -99,7 +99,8 @@ class IssuesViewController: UIViewController {
         tableView.rx.itemSelected
             .subscribe(onNext: { [weak self] indexPath in
                 
-                 let cell = self?.tableView.cellForRow(at: indexPath) as? IssueTableViewCell
+                self?.tableView.deselectRow(at: indexPath, animated: true)
+                let cell = self?.tableView.cellForRow(at: indexPath) as? IssueTableViewCell
                 
                 // Pushing to event detail
                 let commentsVC = self?.storyboard?.instantiateViewController(withIdentifier: StoryboardId.comments) as? CommentsViewController

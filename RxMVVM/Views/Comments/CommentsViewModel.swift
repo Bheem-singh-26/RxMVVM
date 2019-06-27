@@ -16,6 +16,7 @@ class CommnetsViewModel {
     public enum HomeError {
         case internetError(String)
         case serverMessage(String)
+        case empltyData(String)
     }
     
     public let comments : PublishSubject<[Comment]> = PublishSubject()
@@ -35,8 +36,12 @@ class CommnetsViewModel {
                 
                 
                 let comments = responseJson.arrayValue.compactMap{ return Comment(data: try!$0.rawData())}
-                self.comments.onNext(comments)
-                
+                if comments.count > 0{
+                     self.comments.onNext(comments)
+                }else{
+                    self.error.onNext(.empltyData("There is no comments avaiable for this issue"))
+                }
+               
                 
             case .failure(let failure) :
                 switch failure {

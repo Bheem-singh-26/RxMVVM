@@ -45,14 +45,18 @@ class CommentsViewController: UIViewController {
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { (error) in
                 switch error {
-                case .internetError(let message):
-                    self.alertWithMessage(title: "Feching data failed", message: message, handler: {
-                        let _ = self.navigationController?.popViewController(animated: true)
-                    })
-                case .serverMessage(let message):
-                    self.alertWithMessage(title: "Feching data failed", message: message, handler: {
-                        let _ = self.navigationController?.popViewController(animated: true)
-                    })
+                    case .internetError(let message):
+                        self.alertWithMessage(title: "Feching data failed", message: message, handler: {
+                            let _ = self.navigationController?.popViewController(animated: true)
+                        })
+                    case .serverMessage(let message):
+                        self.alertWithMessage(title: "Feching data failed", message: message, handler: {
+                            let _ = self.navigationController?.popViewController(animated: true)
+                        })
+                    case .empltyData(let message):
+                        self.alertWithMessage(title: "No comments", message: message, handler: {
+                            let _ = self.navigationController?.popViewController(animated: true)
+                        })
                 }
             })
             .disposed(by: disposeBag)
@@ -103,7 +107,6 @@ class CommentsViewController: UIViewController {
                 
                 // Pushing to event detail
                 let detailVC = self?.storyboard?.instantiateViewController(withIdentifier: StoryboardId.comments) as? CommentsViewController
-                //detailVC?.eventDetails = cell?.cellevent
                 
                 self?.navigationController?.pushViewController(detailVC!, animated: true)
                 
