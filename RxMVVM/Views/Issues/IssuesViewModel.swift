@@ -33,18 +33,19 @@ class IssuesViewModel {
             case .success(let responseJson) :
                 
                 
-                let issues = responseJson.arrayValue.compactMap{ return Issue(data: try!$0.rawData())}
+                var issues = responseJson.arrayValue.compactMap{ return Issue(data: try!$0.rawData())}
+                issues = issues.sorted(by: {$0.updated_at > $1.updated_at})
                 self.issues.onNext(issues)
                 
                 
             case .failure(let failure) :
                 switch failure {
                 case .connectionError:
-                    self.error.onNext(.internetError("Check your Internet connection."))
+                    self.error.onNext(.internetError(StringConstants.checkInternet))
                 case .authorizationError(let errorJson):
                     self.error.onNext(.serverMessage(errorJson["message"].stringValue))
                 default:
-                    self.error.onNext(.serverMessage("Unknown Error"))
+                    self.error.onNext(.serverMessage(StringConstants.unknownError))
                 }
                 
             }

@@ -90,7 +90,6 @@
 			isa = PBXGroup;
 			children = (
 				9B51125122C4675600747FCB /* Services */,
-				9B51125022C4674100747FCB /* Routers */,
 				9B51124F22C4673200747FCB /* Entities */,
 				9B51125522C4694100747FCB /* SupportFiles */,
 				9B51125222C4676800747FCB /* Views */,
@@ -110,13 +109,6 @@
 				9B51125F22C4C58A00747FCB /* Comment.swift */,
 			);
 			path = Entities;
-			sourceTree = "<group>";
-		};
-		9B51125022C4674100747FCB /* Routers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Routers;
 			sourceTree = "<group>";
 		};
 		9B51125122C4675600747FCB /* Services */ = {

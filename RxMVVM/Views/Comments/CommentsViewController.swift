@@ -31,7 +31,7 @@ class CommentsViewController: UIViewController {
     
     func setUpView(){
         
-        self.title = "Comments"
+        self.title = StringConstants.commentsViewTitle
         self.tableView.tableFooterView = UIView()
         
     }
@@ -46,15 +46,15 @@ class CommentsViewController: UIViewController {
             .subscribe(onNext: { (error) in
                 switch error {
                     case .internetError(let message):
-                        self.alertWithMessage(title: "Feching data failed", message: message, handler: {
+                        self.alertWithMessage(title: StringConstants.fetchDataFailed, message: message, handler: {
                             let _ = self.navigationController?.popViewController(animated: true)
                         })
                     case .serverMessage(let message):
-                        self.alertWithMessage(title: "Feching data failed", message: message, handler: {
+                        self.alertWithMessage(title: StringConstants.fetchDataFailed, message: message, handler: {
                             let _ = self.navigationController?.popViewController(animated: true)
                         })
                     case .empltyData(let message):
-                        self.alertWithMessage(title: "No comments", message: message, handler: {
+                        self.alertWithMessage(title: StringConstants.noComment, message: message, handler: {
                             let _ = self.navigationController?.popViewController(animated: true)
                         })
                 }
@@ -62,17 +62,14 @@ class CommentsViewController: UIViewController {
             .disposed(by: disposeBag)
         
         
-        // binding albums to album container
+        // binding ViewModel comments to view comments container
         
         commnetsViewModel
             .comments
             .observeOn(MainScheduler.instance)
             .bind(to: self.comments)
             .disposed(by: disposeBag)
-        
-        // binding tracks to track container
-        
-        
+   
         
     }
     
@@ -81,10 +78,11 @@ class CommentsViewController: UIViewController {
     private func setupBinding(){
         
         
-        tableView.register(UINib(nibName: "CommnetTableViewCell", bundle: nil), forCellReuseIdentifier: String(describing: CommnetTableViewCell.self))
+        tableView.register(UINib(nibName: CommnetTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: CommnetTableViewCell.identifier)
         
+        // binding comments to tableview
         
-        comments.bind(to: tableView.rx.items(cellIdentifier:"CommnetTableViewCell", cellType: CommnetTableViewCell.self)){
+        comments.bind(to: tableView.rx.items(cellIdentifier:CommnetTableViewCell.identifier, cellType: CommnetTableViewCell.self)){
             (row ,comments,cell) in
             
             cell.cellComment = comments
@@ -102,15 +100,6 @@ class CommentsViewController: UIViewController {
                 }, completion: nil)
             })).disposed(by: disposeBag)
         
-        tableView.rx.itemSelected
-            .subscribe(onNext: { [weak self] indexPath in
-                
-                // Pushing to event detail
-                let detailVC = self?.storyboard?.instantiateViewController(withIdentifier: StoryboardId.comments) as? CommentsViewController
-                
-                self?.navigationController?.pushViewController(detailVC!, animated: true)
-                
-            }).addDisposableTo(disposeBag)
         
     }
     

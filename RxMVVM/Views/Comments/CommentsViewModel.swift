@@ -39,18 +39,18 @@ class CommnetsViewModel {
                 if comments.count > 0{
                      self.comments.onNext(comments)
                 }else{
-                    self.error.onNext(.empltyData("There is no comments avaiable for this issue"))
+                    self.error.onNext(.empltyData(StringConstants.commentsNotAvailable))
                 }
                
                 
             case .failure(let failure) :
                 switch failure {
                 case .connectionError:
-                    self.error.onNext(.internetError("Check your Internet connection."))
+                    self.error.onNext(.internetError(StringConstants.checkInternet))
                 case .authorizationError(let errorJson):
                     self.error.onNext(.serverMessage(errorJson["message"].stringValue))
                 default:
-                    self.error.onNext(.serverMessage("Unknown Error"))
+                    self.error.onNext(.serverMessage(StringConstants.unknownError))
                 }
                 
             }

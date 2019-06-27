@@ -15,6 +15,8 @@ class CommnetTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     
+    static let identifier = "CommnetTableViewCell"
+    
     var cellComment : Comment! {
         didSet {
             self.userImage.image = #imageLiteral(resourceName: "defaultUserIcon")

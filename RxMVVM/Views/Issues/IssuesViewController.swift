@@ -31,7 +31,7 @@ class IssuesViewController: UIViewController {
     
     func setUpView(){
         
-        self.title = "Issues"
+        self.title = StringConstants.issuesViewTitle
         
     }
     
@@ -45,11 +45,11 @@ class IssuesViewController: UIViewController {
             .subscribe(onNext: { (error) in
                 switch error {
                 case .internetError(let message):
-                    self.alertWithMessage(title: "Feching data failed", message: message, handler: {
+                    self.alertWithMessage(title: StringConstants.fetchDataFailed, message: message, handler: {
                         let _ = self.navigationController?.popViewController(animated: true)
                     })
                 case .serverMessage(let message):
-                    self.alertWithMessage(title: "Feching data failed", message: message, handler: {
+                    self.alertWithMessage(title: StringConstants.fetchDataFailed, message: message, handler: {
                         let _ = self.navigationController?.popViewController(animated: true)
                     })
                 }
@@ -57,16 +57,13 @@ class IssuesViewController: UIViewController {
             .disposed(by: disposeBag)
         
         
-        // binding albums to album container
+        // binding issues to view's issues
         
         issuesViewModel
             .issues
             .observeOn(MainScheduler.instance)
             .bind(to: self.issues)
             .disposed(by: disposeBag)
-        
-        // binding tracks to track container
-        
         
         
     }
@@ -75,10 +72,10 @@ class IssuesViewController: UIViewController {
     
     private func setupBinding(){
         
-        tableView.register(UINib(nibName: "IssueTableViewCell", bundle: nil), forCellReuseIdentifier: String(describing: IssueTableViewCell.self))
+        tableView.register(UINib(nibName: IssueTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: IssueTableViewCell.identifier)
         
-        
-        issues.bind(to: tableView.rx.items(cellIdentifier:"IssueTableViewCell", cellType: IssueTableViewCell.self)){
+        // binding issues to tableView
+        issues.bind(to: tableView.rx.items(cellIdentifier:IssueTableViewCell.identifier, cellType: IssueTableViewCell.self)){
             (row ,issues,cell) in
             
             cell.cellIssue = issues
@@ -96,13 +93,16 @@ class IssuesViewController: UIViewController {
                 }, completion: nil)
             })).disposed(by: disposeBag)
         
+        
+        // if tableViewCell is selected
+        
         tableView.rx.itemSelected
             .subscribe(onNext: { [weak self] indexPath in
                 
                 self?.tableView.deselectRow(at: indexPath, animated: true)
                 let cell = self?.tableView.cellForRow(at: indexPath) as? IssueTableViewCell
                 
-                // Pushing to event detail
+                // Pushing to comments listing
                 let commentsVC = self?.storyboard?.instantiateViewController(withIdentifier: StoryboardId.comments) as? CommentsViewController
                 commentsVC?.commnetsViewModel.comments_url = cell?.cellIssue.comments_url
                 

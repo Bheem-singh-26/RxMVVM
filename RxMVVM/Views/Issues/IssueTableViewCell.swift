@@ -13,6 +13,8 @@ class IssueTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     
+    static let identifier = "IssueTableViewCell"
+    
     var cellIssue : Issue! {
         didSet {
             self.titleLabel.text = self.cellIssue.title

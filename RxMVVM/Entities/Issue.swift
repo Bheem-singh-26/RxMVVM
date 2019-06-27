@@ -11,7 +11,7 @@ import Foundation
 struct Issue: Codable {
     
     
-    let title, comments_url, description: String
+    let title, comments_url, description, updated_at: String
     let id, number: Int
     
     
@@ -21,6 +21,7 @@ struct Issue: Codable {
         case title = "title"
         case comments_url
         case description = "body"
+        case updated_at
     }
     
     
