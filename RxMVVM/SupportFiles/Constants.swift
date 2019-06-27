@@ -10,6 +10,18 @@ import Foundation
 
 struct Constants {
     
-    static let  firebase_sdk_issues = "https://api.github.com/repos/firebase/firebase-ios-sdk/issues"
+    // apis url constants
+    static let firebase_sdk_issues = "https://api.github.com/repos/firebase/firebase-ios-sdk/issues"
+    
     
 }
+
+
+struct StoryboardId{
+    
+    // storyboard constants
+    static let issues = "IssuesViewController"
+    static let comments = "CommentsViewController"
+    
+}
+

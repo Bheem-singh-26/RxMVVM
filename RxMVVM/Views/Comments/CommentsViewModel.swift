@@ -1,5 +1,5 @@
 //
-//  IssuesViewModel.swift
+//  CommentsViewModel.swift
 //  RxMVVM
 //
 //  Created by Bheem Singh on 27/06/19.
@@ -11,30 +11,31 @@ import RxSwift
 import RxCocoa
 
 
-class IssuesViewModel {
+class CommnetsViewModel {
     
     public enum HomeError {
         case internetError(String)
         case serverMessage(String)
     }
     
-    public let issues : PublishSubject<[Issue]> = PublishSubject()
+    public let comments : PublishSubject<[Comment]> = PublishSubject()
     public let error : PublishSubject<HomeError> = PublishSubject()
     
     private let disposable = DisposeBag()
     
+    public var comments_url:String!
     
     public func requestData(){
         
         
-        APIManager.requestData(url: Constants.firebase_sdk_issues, method: .get, parameters: nil, completion: { (result) in
+        APIManager.requestData(url: comments_url, method: .get, parameters: nil, completion: { (result) in
             
             switch result {
             case .success(let responseJson) :
                 
                 
-                let issues = responseJson.arrayValue.compactMap{ return Issue(data: try!$0.rawData())}
-                self.issues.onNext(issues)
+                let comments = responseJson.arrayValue.compactMap{ return Comment(data: try!$0.rawData())}
+                self.comments.onNext(comments)
                 
                 
             case .failure(let failure) :
@@ -52,4 +53,5 @@ class IssuesViewModel {
         
     }
 }
+
 

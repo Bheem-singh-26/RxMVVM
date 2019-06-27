@@ -7,3 +7,35 @@
 //
 
 import Foundation
+
+struct Issue: Codable {
+    
+    
+    let title, comments_url, description: String
+    let id, number: Int
+    
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case number
+        case title = "title"
+        case comments_url
+        case description = "body"
+    }
+    
+    
+}
+
+extension Issue {
+    
+    init?(data: Data) {
+        do {
+            let me = try JSONDecoder().decode(Issue.self, from: data)
+            self = me
+        }catch {
+            print(error)
+            return nil
+        }
+    }
+    
+}
