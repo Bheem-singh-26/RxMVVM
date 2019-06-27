@@ -10,10 +10,8 @@ Coding : Functional Reactive programming using
                RXSWIFT + RxCocoa
             
 Modules:
-            1. Issues -> Displaying a list of firebase-ios-sdk issues to the user
-                                Order by most-recently updated issue first
-            2. Comments
-                                All the comments should be shown on the screen for the selected issue
+1. Issues: Displaying a list of firebase-ios-sdk issues to the user. Order by most-recently updated issue first
+2. Comments: All the comments should be shown on the screen for the selected issue
 
 UIBinding : Tableview binding with RX
 
