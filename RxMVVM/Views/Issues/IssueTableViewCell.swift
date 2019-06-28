@@ -15,10 +15,10 @@ class IssueTableViewCell: UITableViewCell {
     
     static let identifier = "IssueTableViewCell"
     
-    var cellIssue : Issue! {
+    var cellIssue : RealmIssue! {
         didSet {
             self.titleLabel.text = self.cellIssue.title
-            self.descriptionLabel.text = self.cellIssue.description.maxLength(length: 140)
+            self.descriptionLabel.text = self.cellIssue.descriptionBody.maxLength(length: 140)
         }
     }
     

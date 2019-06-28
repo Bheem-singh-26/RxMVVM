@@ -9,12 +9,14 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import RealmSwift
+
 
 class IssuesViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    public var issues = PublishSubject<[Issue]>()
+    public var issues:  PublishSubject<[RealmIssue]> = PublishSubject()
     
     
     private let disposeBag = DisposeBag()

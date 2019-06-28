@@ -12,5 +12,6 @@ target 'RxMVVM' do
   	pod 'RxSwift'
   	pod 'RxCocoa'
     pod 'SwiftyJSON'
+    pod 'RealmSwift'
 
 end

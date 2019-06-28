@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		6FA1BA0E2170B386169429FB /* Pods_RxMVVM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F07A148D46B3431B9C114F0 /* Pods_RxMVVM.framework */; };
+		9B0602D322C550E500F30543 /* RealmIssue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0602D222C550E500F30543 /* RealmIssue.swift */; };
+		9B0602D522C557AA00F30543 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0602D422C557AA00F30543 /* RealmManager.swift */; };
+		9B376EDB22C5759D000648E5 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B376EDA22C5759D000648E5 /* Date+Extension.swift */; };
 		9B51123E22C3B71A00747FCB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B51123D22C3B71A00747FCB /* AppDelegate.swift */; };
 		9B51124322C3B71A00747FCB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B51124122C3B71A00747FCB /* Main.storyboard */; };
 		9B51124522C3B71B00747FCB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B51124422C3B71B00747FCB /* Assets.xcassets */; };
@@ -32,6 +35,9 @@
 /* Begin PBXFileReference section */
 		7F07A148D46B3431B9C114F0 /* Pods_RxMVVM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxMVVM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		91915ED0EEF8A3BB30FC40EF /* Pods-RxMVVM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxMVVM.release.xcconfig"; path = "Target Support Files/Pods-RxMVVM/Pods-RxMVVM.release.xcconfig"; sourceTree = "<group>"; };
+		9B0602D222C550E500F30543 /* RealmIssue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmIssue.swift; sourceTree = "<group>"; };
+		9B0602D422C557AA00F30543 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		9B376EDA22C5759D000648E5 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		9B51123A22C3B71A00747FCB /* RxMVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxMVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B51123D22C3B71A00747FCB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B51124222C3B71A00747FCB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -107,6 +113,7 @@
 			children = (
 				9B51125D22C46CF500747FCB /* Issue.swift */,
 				9B51125F22C4C58A00747FCB /* Comment.swift */,
+				9B0602D222C550E500F30543 /* RealmIssue.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -115,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				9B51125322C467A500747FCB /* NetworkManager.swift */,
+				9B0602D422C557AA00F30543 /* RealmManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -165,6 +173,7 @@
 				9B51126B22C4E89B00747FCB /* UIViewController+Extension.swift */,
 				9B51126D22C4F85B00747FCB /* String+Extension.swift */,
 				9B51127522C5098F00747FCB /* UIImageView+Extension.swift */,
+				9B376EDA22C5759D000648E5 /* Date+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -266,6 +275,8 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-RxMVVM/Pods-RxMVVM-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
@@ -275,6 +286,8 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
@@ -315,6 +328,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B51127322C4FCE300747FCB /* CommnetTableViewCell.swift in Sources */,
+				9B0602D322C550E500F30543 /* RealmIssue.swift in Sources */,
 				9B51127022C4FC6C00747FCB /* CommentsViewModel.swift in Sources */,
 				9B51127622C5098F00747FCB /* UIImageView+Extension.swift in Sources */,
 				9B51126622C4DDC200747FCB /* IssuesViewController.swift in Sources */,
@@ -322,6 +336,8 @@
 				9B51125C22C46C7100747FCB /* IssuesViewModel.swift in Sources */,
 				9B51126022C4C58A00747FCB /* Comment.swift in Sources */,
 				9B51125422C467A500747FCB /* NetworkManager.swift in Sources */,
+				9B376EDB22C5759D000648E5 /* Date+Extension.swift in Sources */,
+				9B0602D522C557AA00F30543 /* RealmManager.swift in Sources */,
 				9B51123E22C3B71A00747FCB /* AppDelegate.swift in Sources */,
 				9B51125922C469D400747FCB /* Constants.swift in Sources */,
 				9B51125E22C46CF500747FCB /* Issue.swift in Sources */,
