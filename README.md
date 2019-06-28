@@ -2,7 +2,7 @@ Tools and Language:
 
 Swift 5, Xcode 10.2, Xcode Project Build system : Legacy Build system
 
-Architecture : MVVM + Router
+Architecture : MVVM
 
 Coding : Functional Reactive programming using
                RXSWIFT + RxCocoa
@@ -14,8 +14,6 @@ Modules:
 2. Comments: Displaying all the comments for the selected issue
 
 UIBinding : Data which is coming from server (ViewModel) and TableView binding  with RX
-
-Router : Base router class to handle mostly screen navigation
 
 Extensions :
             Extensiones -> UI clases extensions
